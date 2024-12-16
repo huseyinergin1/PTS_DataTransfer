@@ -13,6 +13,15 @@
 
 ###
 
-<p align="left">✨ Creating bugs since ...<br>📚 I'm currently learning ...<br>🎯 Goals: ...<br>🎲 Fun fact: ...</p>
+<p align="left">✨ Creating bugs since ...<br>📚 I'm currently learning ...<br>🎯 Goals: Senior<br>🎲 Fun fact: :(</p>
 
 ###
+
+<h2 align="left">Personel devam kontrol cihazları için bir terminal transfer uygulaması geliştirdim. 
+  Bu uygulama, özellikle geliştiriciler için tasarlanmış olup ZKTeco SDK'sı kullanılarak oluşturulmuştur. 
+  Açık kaynaklı bir proje olarak, cihazlar ve sistemler arasında sorunsuz veri aktarımı için güvenilir bir çözüm sunmaktadır.</h2>
+
+###
+
+<p align="left">✨ Hatalar yapıyorum ...<br>📚 Şu anda öğreniyorum ...<br>🎯 Hedefler: Senior<br>🎲 Eğlenceli bir gerçek: :(</p>
+

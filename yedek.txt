@@ -1,0 +1,159 @@
+using System;
+using System.IO;
+using System.Windows.Forms;
+using zkemkeeper;  // ZKTeco SDK'sının doğru namespace'i
+
+namespace TerminalTransfer
+{
+    public partial class Form1 : Form
+    {
+        private dynamic reader; // CZKEM nesnesi için dinamik bir değişken
+
+        public Form1()
+        {
+            InitializeComponent();
+            try
+            {
+                reader = new zkemkeeper.CZKEM();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+            }
+        }
+
+        #region Terminal Sayfası Kodları
+        // Terminal sayfasındaki Bağlantı butonu
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            string ip = txtIpAddress.Text.Trim();
+            string portText = txtPort.Text.Trim();
+
+            if (string.IsNullOrEmpty(ip) || string.IsNullOrEmpty(portText) || !int.TryParse(portText, out int port) || port <= 0)
+            {
+                MessageBox.Show("Lütfen geçerli bir IP adresi ve port numarası girin.");
+                return;
+            }
+
+            try
+            {
+                bool isConnected = reader.Connect_Net(ip, port);
+                if (isConnected)
+                {
+                    lblStatus.Text = "Bağlantı başarılı!";
+                    lblStatus.ForeColor = System.Drawing.Color.Green;
+                    lstMessages.Items.Add("Bağlantı testi başarılı.");
+                }
+                else
+                {
+                    lblStatus.Text = "Bağlantı başarısız!";
+                    lblStatus.ForeColor = System.Drawing.Color.Red;
+                    lstMessages.Items.Add("Bağlantı sağlanamadı. IP ve portu kontrol edin.");
+                }
+            }
+            catch (Exception ex)
+            {
+                lblStatus.Text = $"Bağlantı sırasında hata: {ex.Message}";
+                lblStatus.ForeColor = System.Drawing.Color.Red;
+                lstMessages.Items.Add($"Hata: {ex.Message}");
+            }
+        }
+        #endregion
+
+        #region Ayarlar Sayfası Kodları
+        // Hafızayı temizleme seçeneği
+        private void btnClearMemory_Click(object sender, EventArgs e)
+        {
+            if (chkClearMemory.Checked)
+            {
+                reader.ClearGLog(1); // Cihazdaki logları temizle
+                lstMessages.Items.Add("Cihaz hafızası temizlendi.");
+            }
+            else
+            {
+                MessageBox.Show("Hafıza temizleme seçeneği işaretlenmemiş.");
+            }
+        }
+        #endregion
+
+        #region Transferler Sayfası Kodları
+        // Transfer işlemi
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            string ip = txtIpAddress.Text.Trim();
+            string portText = txtPort.Text.Trim();
+
+            if (string.IsNullOrEmpty(ip) || string.IsNullOrEmpty(portText) || !int.TryParse(portText, out int port) || port <= 0)
+            {
+                MessageBox.Show("Lütfen geçerli bir IP adresi ve port numarası girin.");
+                return;
+            }
+
+            try
+            {
+                bool isConnected = reader.Connect_Net(ip, port);
+                if (!isConnected)
+                {
+                    MessageBox.Show("Bağlantı sağlanamadı. IP ve portu kontrol edin.");
+                    return;
+                }
+
+                lstMessages.Items.Clear();
+                lstMessages.Items.Add("Cihaza bağlantı sağlandı, hareketler çekiliyor...");
+
+                if (!reader.ReadGeneralLogData(1))
+                {
+                    MessageBox.Show("Hareket verileri okunamadı.");
+                    return;
+                }
+
+                string filePathA = @"C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\Veriler\a.txt";
+                string filePathB = @"C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\Veriler\b.txt";
+
+
+                using (StreamWriter writerA = new StreamWriter(filePathA, true))
+                using (StreamWriter writerB = new StreamWriter(filePathB, true))
+                {
+                    while (reader.SSR_GetGeneralLogData(1,
+                                                        out string enrollNumber,
+                                                        out int verifyMode,
+                                                        out int inOutMode,
+                                                        out int year,
+                                                        out int month,
+                                                        out int day,
+                                                        out int hour,
+                                                        out int minute,
+                                                        out int second,
+                                                        out int workCode))
+                    {
+                        string direction = inOutMode == 0 ? "001" : "002";
+                        string cardNumber = enrollNumber.PadLeft(10, '0');
+                        string terminalNo = "01";
+                        string date = $"{year:0000}-{month:00}-{day:00}";
+                        string time = $"{hour:00}:{minute:00}:{second:00}";
+
+                        string logLine = $"{direction},{cardNumber},{terminalNo},{date},{time}";
+
+                        writerA.WriteLine(logLine);
+                        writerB.WriteLine(logLine);
+                        lstMessages.Items.Add($"Kaydedildi: {logLine}");
+                    }
+                }
+
+                MessageBox.Show("Hareketler başarıyla dosyalara kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}");
+                lstMessages.Items.Add($"Hata: {ex.Message}");
+            }
+        }
+
+        // Test butonu işlevi
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test butonu çalıştı.");
+        }
+        #endregion
+    }
+}

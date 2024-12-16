@@ -1,0 +1,15 @@
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\bin\Debug\TerminalTransfer.exe.config
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\bin\Debug\TerminalTransfer.exe
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\bin\Debug\TerminalTransfer.pdb
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.csproj.AssemblyReference.cache
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\Interop.zkemkeeper.dll
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.csproj.ResolveComReference.cache
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.Form1.resources
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.Properties.Resources.resources
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.csproj.GenerateResource.cache
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.csproj.CoreCompileInputs.cache
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\Terminal.B6804CDA.Up2Date
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.exe
+C:\Users\huseyin\source\repos\TerminalTransfer\TerminalTransfer\obj\Debug\TerminalTransfer.pdb

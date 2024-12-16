@@ -1,0 +1,10 @@
+[
+  {
+    "Select": true,
+    "TerminalNo": "01",
+    "TerminalAdi": "Terminal 1",
+    "IpAddress": "192.168.1.95",
+    "Port": "4370",
+    "hafizasil": true
+  }
+]

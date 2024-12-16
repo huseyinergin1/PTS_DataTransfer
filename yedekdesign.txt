@@ -1,0 +1,215 @@
+using System;
+
+namespace TerminalTransfer
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Panel panelTerminal; // Terminal Panel
+        private System.Windows.Forms.Panel panelSettings; // Settings Panel
+        private System.Windows.Forms.Panel panelTransfer; // Transfer Panel
+        private System.Windows.Forms.TextBox txtIpAddress;
+        private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button btnGetMovements;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ListBox lstMessages;
+        private System.Windows.Forms.CheckBox chkClearMemory;
+
+        private System.Windows.Forms.Button btnTerminalPanel;
+        private System.Windows.Forms.Button btnSettingsPanel;
+        private System.Windows.Forms.Button btnTransferPanel;
+
+        private void InitializeComponent()
+        {
+            this.panelTerminal = new System.Windows.Forms.Panel();
+            this.txtIpAddress = new System.Windows.Forms.TextBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnTransferPanel = new System.Windows.Forms.Button();
+            this.btnSettingsPanel = new System.Windows.Forms.Button();
+            this.btnTerminalPanel = new System.Windows.Forms.Button();
+            this.panelSettings = new System.Windows.Forms.Panel();
+            this.chkClearMemory = new System.Windows.Forms.CheckBox();
+            this.btnGetMovements = new System.Windows.Forms.Button();
+            this.panelTransfer = new System.Windows.Forms.Panel();
+            this.lstMessages = new System.Windows.Forms.ListBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.panelTerminal.SuspendLayout();
+            this.panelSettings.SuspendLayout();
+            this.panelTransfer.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelTerminal
+            // 
+            this.panelTerminal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTerminal.Controls.Add(this.txtIpAddress);
+            this.panelTerminal.Controls.Add(this.txtPort);
+            this.panelTerminal.Location = new System.Drawing.Point(20, 52);
+            this.panelTerminal.Name = "panelTerminal";
+            this.panelTerminal.Size = new System.Drawing.Size(893, 386);
+            this.panelTerminal.TabIndex = 0;
+            // 
+            // txtIpAddress
+            // 
+            this.txtIpAddress.Location = new System.Drawing.Point(50, 30);
+            this.txtIpAddress.Name = "txtIpAddress";
+            this.txtIpAddress.Size = new System.Drawing.Size(156, 22);
+            this.txtIpAddress.TabIndex = 0;
+            this.txtIpAddress.Text = "192.168.1.95";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(212, 30);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(45, 22);
+            this.txtPort.TabIndex = 1;
+            this.txtPort.Text = "4370";
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(165, 145);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(92, 28);
+            this.btnConnect.TabIndex = 2;
+            this.btnConnect.Text = "Test";
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // btnTransferPanel
+            // 
+            this.btnTransferPanel.Location = new System.Drawing.Point(119, 12);
+            this.btnTransferPanel.Name = "btnTransferPanel";
+            this.btnTransferPanel.Size = new System.Drawing.Size(92, 33);
+            this.btnTransferPanel.TabIndex = 5;
+            this.btnTransferPanel.Text = "Transfer";
+            this.btnTransferPanel.Click += new System.EventHandler(this.btnTransferPanel_Click);
+            // 
+            // btnSettingsPanel
+            // 
+            this.btnSettingsPanel.Location = new System.Drawing.Point(217, 12);
+            this.btnSettingsPanel.Name = "btnSettingsPanel";
+            this.btnSettingsPanel.Size = new System.Drawing.Size(92, 33);
+            this.btnSettingsPanel.TabIndex = 4;
+            this.btnSettingsPanel.Text = "Ayarlar";
+            this.btnSettingsPanel.Click += new System.EventHandler(this.btnSettingsPanel_Click);
+            // 
+            // btnTerminalPanel
+            // 
+            this.btnTerminalPanel.Location = new System.Drawing.Point(20, 12);
+            this.btnTerminalPanel.Name = "btnTerminalPanel";
+            this.btnTerminalPanel.Size = new System.Drawing.Size(92, 33);
+            this.btnTerminalPanel.TabIndex = 3;
+            this.btnTerminalPanel.Text = "Terminal";
+            this.btnTerminalPanel.Click += new System.EventHandler(this.btnTerminalPanel_Click);
+            // 
+            // panelSettings
+            // 
+            this.panelSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSettings.Controls.Add(this.chkClearMemory);
+            this.panelSettings.Location = new System.Drawing.Point(20, 51);
+            this.panelSettings.Name = "panelSettings";
+            this.panelSettings.Size = new System.Drawing.Size(893, 387);
+            this.panelSettings.TabIndex = 1;
+            this.panelSettings.Visible = false;
+            // 
+            // chkClearMemory
+            // 
+            this.chkClearMemory.AutoSize = true;
+            this.chkClearMemory.Location = new System.Drawing.Point(16, 3);
+            this.chkClearMemory.Name = "chkClearMemory";
+            this.chkClearMemory.Size = new System.Drawing.Size(174, 20);
+            this.chkClearMemory.TabIndex = 2;
+            this.chkClearMemory.Text = "Cihaz Hafızasını Temizle";
+            // 
+            // btnGetMovements
+            // 
+            this.btnGetMovements.Location = new System.Drawing.Point(53, 145);
+            this.btnGetMovements.Name = "btnGetMovements";
+            this.btnGetMovements.Size = new System.Drawing.Size(92, 28);
+            this.btnGetMovements.TabIndex = 0;
+            this.btnGetMovements.Text = "Transfer";
+            this.btnGetMovements.Click += new System.EventHandler(this.btnTransfer_Click);
+            // 
+            // panelTransfer
+            // 
+            this.panelTransfer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTransfer.Controls.Add(this.btnConnect);
+            this.panelTransfer.Controls.Add(this.btnGetMovements);
+            this.panelTransfer.Controls.Add(this.lstMessages);
+            this.panelTransfer.Controls.Add(this.lblStatus);
+            this.panelTransfer.Location = new System.Drawing.Point(20, 51);
+            this.panelTransfer.Name = "panelTransfer";
+            this.panelTransfer.Size = new System.Drawing.Size(893, 387);
+            this.panelTransfer.TabIndex = 2;
+            this.panelTransfer.Visible = false;
+            // 
+            // lstMessages
+            // 
+            this.lstMessages.FormattingEnabled = true;
+            this.lstMessages.ItemHeight = 16;
+            this.lstMessages.Location = new System.Drawing.Point(50, 40);
+            this.lstMessages.Name = "lstMessages";
+            this.lstMessages.Size = new System.Drawing.Size(300, 84);
+            this.lstMessages.TabIndex = 0;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(50, 10);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(113, 16);
+            this.lblStatus.TabIndex = 1;
+            this.lblStatus.Text = "Bağlantı durumu: -";
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(925, 450);
+            this.Controls.Add(this.panelTransfer);
+            this.Controls.Add(this.btnTerminalPanel);
+            this.Controls.Add(this.btnSettingsPanel);
+            this.Controls.Add(this.btnTransferPanel);
+            this.Controls.Add(this.panelTerminal);
+            this.Controls.Add(this.panelSettings);
+            this.Name = "Form1";
+            this.Text = "ZKTeco Bağlantı";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.panelTerminal.ResumeLayout(false);
+            this.panelTerminal.PerformLayout();
+            this.panelSettings.ResumeLayout(false);
+            this.panelSettings.PerformLayout();
+            this.panelTransfer.ResumeLayout(false);
+            this.panelTransfer.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        // Form Load event to set the initial visibility of panels
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            panelTerminal.Visible = true;
+            panelSettings.Visible = false;
+            panelTransfer.Visible = false;
+        }
+
+        private void btnTerminalPanel_Click(object sender, EventArgs e)
+        {
+            panelTerminal.Visible = true;
+            panelSettings.Visible = false;
+            panelTransfer.Visible = false;
+        }
+
+        private void btnSettingsPanel_Click(object sender, EventArgs e)
+        {
+            panelTerminal.Visible = false;
+            panelSettings.Visible = true;
+            panelTransfer.Visible = false;
+        }
+
+        private void btnTransferPanel_Click(object sender, EventArgs e)
+        {
+            panelTerminal.Visible = false;
+            panelSettings.Visible = false;
+            panelTransfer.Visible = true;
+        }
+    }
+}
